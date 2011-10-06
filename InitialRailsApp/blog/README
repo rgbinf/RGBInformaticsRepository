@@ -1,3 +1,64 @@
+==GB Notes:
+
+Initial creation of project was all done automatically in Eclipse.
+I am following the tutorial at
+
+  http://....RailsDocs/getting_started.html
+  
+which I've downloaded with wget to:
+
+  file:///Users/brickner/Desktop/RailsDocs/getting_started/getting_started.html
+
+I did not see a way to create the database in Eclipse.
+To create the database, open a terminal window and run:
+
+  Fusion4-Lion:blog brickner$ cd /Users/brickner/git/RGBInformaticsRepository/InitialRailsApp/blog
+  Fusion4-Lion:blog brickner$ rake db:create
+
+There was no response, so I guess it worked?? 
+Hmmm, looks like there is a
+right-click 'Rake' option on the project to create database as well.
+
+In Eclipse, I selected the 'blog' project and then Refresh'ed.
+
+Tutorial '$ rails server' is done with 'Run server' right-click opion on project.
+
+Instead of 'localhost' URL in tutorial, use 'http://0.0.0.0:3000/'
+
+Tuturial next generates controller. It appears Eclipse right-click options
+are greyed and can't use.  So go to same directory and run:
+
+  Fusion4-Lion:blog brickner$ cd /Users/brickner/git/RGBInformaticsRepository/InitialRailsApp/blog
+  Fusion4-Lion:blog brickner$ rails generate controller home index
+
+Seemed to work fine, Terminal showed lots of 'create' and 'invoke' log lines.
+
+Refresh project again.
+
+Next terminal task:
+
+  $ rails generate scaffold Post name:string title:string content:text
+  
+Again, plenty of green log entries.  I notice Eclipse refreshes without
+being told.
+
+6.1 - Next terminal task was the rake migrate.  
+There appeared to be a right-click option for this on project, however
+it did not appear to do anything.  So back to terminal and
+
+  $ rake db:migrate
+  
+Confirmation:
+
+==  CreatePosts: migrating ====================================================
+-- create_table(:posts)
+   -> 0.0013s
+==  CreatePosts: migrated (0.0014s) ===========================================
+
+
+
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
